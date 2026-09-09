@@ -125,23 +125,84 @@ console.log(s)
 // Input: 1223342
 // Digit: 2
 // Output: 3
+let a1 = 1223342;
+
+function findDigitCount (n,num){
+let count = 0;
+
+  while ( num !== 0){
+
+    let digit = num % 10;
+
+    if(digit === n){
+       count ++;
+    }
+    num = Math.floor(num / 10);
+  }
+  return count;
+}
+
+console.log(findDigitCount(2,a1));
 
 
 // Check whether a number is an Armstrong number.
 // 153 → Armstrong
+let armstrong = 153 ;
+
+function checkArmstrong(a){
+ let count = 0;
+  let b = a;
+  while ( a !== 0){
+
+  let digit = a % 10;
+    count += digit * digit * digit;
+
+    a = Math.floor(a / 10);
+}
+  return count === b;
+}
+
+console.log(checkArmstrong(armstrong));
 
 
 // Check whether a number is a perfect number.
 // 6 → Perfect number
+function checkPerfectNum(num){
+  sum = 0 ;
 
+  for(let i=1; i<num; i++){
+
+    if(num % i === 0) {
+      sum += i
+    }
+    
+  }
+  return sum === num;
+  
+}
+
+console.log(checkPerfectNum(6));
 
 
 
 // 🟠 Level 3 — Prime numbers
 
-// Very important interview practice.
-
 // Check whether a number is prime.
+function checkPrime(num){
+
+  for(let i=2; i<num; i++){
+
+    if( num % i === 0){
+      return false;
+    }
+    
+  }
+  return true;
+}
+
+console.log(checkPrime(7));
+
+
 // Print all prime numbers from 1 to 100.
 // Count prime numbers between two numbers.
 // Find the first N prime numbers.
